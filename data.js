@@ -24,10 +24,10 @@ const typeOfWorkArr = [
 
     /* массив со ссылками на картинки */
 const imgUrls = [
-    '/img/header-photo/header_photo_1.jpg',
-    '/img/header-photo/header_photo_2.jpg',
-    '/img/header-photo/header_photo_3.jpg',
-    '/img/header-photo/header_photo_4.jpg',
+    '../img/header-photo/header_photo_1.jpg',
+    '../img/header-photo/header_photo_2.jpg',
+    '../img/header-photo/header_photo_3.jpg',
+    '../img/header-photo/header_photo_4.jpg',
 ]
 
 export { typeOfWorkArr, imgUrls }
