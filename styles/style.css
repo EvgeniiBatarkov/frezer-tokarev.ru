@@ -438,6 +438,11 @@ footer a:hover {
     box-shadow: 3px 3px 5px #cfcfcf;
     }  
 
+    .desc-block div:hover {
+    box-shadow: 4px 4px 2px #acacac;
+    border: 0.5px solid #acacac;
+}
+
     .desc-block {
         gap: 2.5vw;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
