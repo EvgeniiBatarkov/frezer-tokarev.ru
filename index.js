@@ -1,9 +1,14 @@
 /* импорт данных */
-import { typeOfWorkArr } from "./data.js";
+import { typeOfWorkArr, imgUrls } from "./data.js";
 
-/* инициализация переменных */
+/* Инициализация переменных DOM */
 const typeOfWorkEl =  document.getElementById("type-of-work-el")
+const mainInformation = document.querySelector('.main-information')
 
+/* Инициализация переменных для динамической смены картинок */
+let currentIndex = 0;
+const transitionDuration = 1000; /* длительность CSS перехода, мс */
+const intervalDuration = 15000; /* время до смены картинки, мс */
 
 /* Функция отрисовки блока с типами работ */
 function render() {
@@ -52,3 +57,21 @@ function copyToClipboard() {
     }, 3000)
     
 }
+
+    /* функция смены картинки в блоке .main-information*/
+
+function changeBackground() {
+    /*добавили класс, плавное исчезгновение за счет transition */
+    mainInformation.classList.add('fade-out')
+
+    setTimeout(function() {
+        currentIndex = (currentIndex + 1) % imgUrls.length
+        const newImgUrl = imgUrls[currentIndex]
+
+        mainInformation.style.setProperty('--bg-image', `url(${newImgUrl})`)
+
+        mainInformation.classList.remove('fade-out')
+    }, transitionDuration)
+}
+    /* вызов функции смены картинки в блоке .main-information */
+setInterval(changeBackground, intervalDuration)
